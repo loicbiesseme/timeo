@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Timeo",
+  "version": "0.1.0",
+  "identifier": "com.timeo.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Timeo",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 940,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "visible": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "publisher": "Timeo",
+    "copyright": "© 2026 Timeo",
+    "category": "Productivity",
+    "shortDescription": "Suivi du temps de travail hors ligne",
+    "longDescription": "Timeo enregistre et analyse votre temps de travail : chronomètre avec pauses, tableau de bord, statistiques, objectifs et export. 100 % hors ligne, données stockées localement.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": { "type": "downloadBootstrapper" },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["French", "English"],
+        "displayLanguageSelector": true
+      }
+    }
+  }
+}
